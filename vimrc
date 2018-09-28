@@ -52,9 +52,14 @@ set formatoptions+="qrcoa"
 syntax enable
 set background=dark
 
-highlight Comment term=italic cterm=italic
-highlight StatusLine term=italic cterm=italic ctermbg=0
-highlight StatusLineNC term=italic cterm=italic ctermbg=8
+" -- Nord Colorscheme
+let g:nord_italic = 1
+let g:nord_italic_comments = 1
+let g:nord_uniform_status_lines = 1
+colorscheme nord
+
+highlight StatusLine term=italic cterm=italic
+highlight StatusLineNC term=italic cterm=italic
 highlight Visual term=italic cterm=italic ctermbg=0
 highlight ColorColumn ctermbg=0
 
