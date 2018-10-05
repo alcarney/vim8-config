@@ -2,6 +2,13 @@
 "
 "  Settings that apply everywhere.
 
+" ---------------------------- Help ----------------------------------------
+"
+"  Vim's help system is amazing below is a good list of topics that you
+"  should definitely look at often
+"
+"  :h filename-modifiers
+
 " ---------------------------- First Steps ---------------------------------
 "
 " nocompatible:  We want the iMproved part.
@@ -10,6 +17,7 @@
 set nocompatible
 filetype plugin indent on
 set backspace=indent,eol,start
+set encoding=utf8
 
 
 "  ---------------------------- Tabs and Spaces ----------------------------
