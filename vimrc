@@ -7,7 +7,9 @@
 "  Vim's help system is amazing below is a good list of topics that you
 "  should definitely look at often
 "
+"  :h quickfix
 "  :h filename-modifiers
+"  :h grep
 
 " ---------------------------- First Steps ---------------------------------
 "
@@ -123,13 +125,9 @@ nnoremap <leader>f  :find<space>
 " -- Buffer Management
 "
 " hidden:        Allow modified buffers to be sent to the background.
-" +:             Open the next buffer
-" -:             Open the previous buffer
 " <leader>b:     List non-vim buffers and prepare a buffer switch command
 " <leader><tab>  Switch to most recent buffer.
 set hidden
-nnoremap +              :bn<cr>
-nnoremap -              :bp<cr>
 nnoremap <leader>b      :filter! /\[/ ls<cr>:b<space>
 nnoremap <leader><tab>  :b#<cr>
 
@@ -181,6 +179,10 @@ set ignorecase
 set smartcase
 set incsearch
 
+" <leader>#:   Run :g/pattern/# using the most recent search
+nnoremap <leader>#  :g/<c-r>//#<cr>
+nnoremap <leader>/  :silent! lvimgrep /<c-r>//j %<cr>:lwindow<cr>
+
 " ------------------------------ General Auto Commands ---------------------
 "
 " In order of appearance:
@@ -190,3 +192,11 @@ augroup general
     autocmd BufWritePre * %s/\s\+$//e
 augroup END
 
+" ------------------------------ Plugins -----------------------------------
+"
+" I'm currently using the following plugins
+"
+"  - nord-vim:        Provides the nord colorscheme
+"  - vim-sandwhich:   IMO a better implementation of vim-surround
+"  - vim-unimpaired:  A nice set of native feeling mappings for next/previous
+"                     commands
