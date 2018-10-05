@@ -7,9 +7,15 @@
 " nocompatible:  We want the iMproved part.
 " filetype ...:  Do stuff based on filetype
 " bacspace:      Make backspace behave as you think it should
+" encoding:      Set the standard file encoding
+" novisualbell:  Don't use the visualbell for errors
+" noswapfile:    Don't produce .swp files
 set nocompatible
 filetype plugin indent on
 set backspace=indent,eol,start
+set encoding=utf8
+set novisualbell
+set noswapfile
 
 
 "  ---------------------------- Tabs and Spaces ----------------------------
@@ -74,6 +80,7 @@ highlight ColorColumn ctermbg=0
 " nowrap:       Truncate lines that are wider than the window
 " list:         Display 'list' characters
 " listchars:    Characters to use when showing certain invisible chars.
+" title:        Change the title according to the file being edited.
 set noshowmode
 set showtabline=0
 set laststatus=0
@@ -82,20 +89,13 @@ set colorcolumn=+1
 set nowrap
 set list
 set listchars=tab:».,trail:·,extends:→,precedes:←
+set title
 
 " Magic that will change the cursor shape in insert mode.
 let &t_ti.="\e[2 q"
 let &t_SI.="\e[5 q"
 let &t_EI.="\e[2 q"
 let &t_te.="\e[2 q"
-
-
-" ------------------------------ Misc --------------------------------------
-"
-" novisualbell:  Don't use the visualbell for errors
-" noswapfile:    Don't produce .swp files
-set novisualbell
-set noswapfile
 
 
 " ------------------------------ Key Maps ----------------------------------
